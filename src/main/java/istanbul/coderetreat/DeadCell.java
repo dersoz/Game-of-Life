@@ -1,3 +1,5 @@
+package istanbul.coderetreat;
+
 /**
  * Created by dogan
  */
@@ -14,13 +16,7 @@ public class DeadCell implements Cell {
         return false;
     }
 
-    @Override
-    public Cell evolve(Integer neighbourCount) {
-        switch (neighbourCount) {
-            case 3:
-                return AliveCell.INSTANCE;
-            default:
-                return INSTANCE;
-        }
+    private DeadCell() {
     }
+
 }
