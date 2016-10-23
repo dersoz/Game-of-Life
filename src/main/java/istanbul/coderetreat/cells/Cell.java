@@ -1,4 +1,4 @@
-package istanbul.coderetreat;
+package istanbul.coderetreat.cells;
 
 /**
  * Created by dogan

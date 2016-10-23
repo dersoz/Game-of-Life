@@ -1,5 +1,7 @@
 package istanbul.coderetreat;
 
+import istanbul.coderetreat.cells.Cell;
+
 /**
  * Created by dogan
  */
@@ -9,13 +11,13 @@ public class Board {
 
     private Cell[][] cells;
 
-    public Board(Integer rows, Integer columns, Cell[][] cells) {
-        this.rows = rows;
-        this.columns = columns;
-        this.cells = copyState(cells);
+    public Board(Cell[][] cells) {
+        this.rows = cells.length;
+        this.columns = cells[0].length;
+        this.cells = copyCells(cells);
     }
 
-    public static Cell[][] copyState(Cell[][] cells) {
+    private static Cell[][] copyCells(Cell[][] cells) {
         Cell[][] copiedCells = new Cell[cells.length][cells[0].length];
         for (int i = 0; i < cells.length; i++)
             System.arraycopy(cells[i], 0, copiedCells[i], 0, cells[0].length);
@@ -23,7 +25,7 @@ public class Board {
     }
 
     public Cell[][] state() {
-        return copyState(this.cells);
+        return copyCells(this.cells);
     }
 
     public Integer getNumOfNeighbours(Integer rowIndex, Integer columnIndex) {
@@ -42,3 +44,4 @@ public class Board {
     }
 
 }
+

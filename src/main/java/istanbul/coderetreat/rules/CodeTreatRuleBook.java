@@ -1,20 +1,26 @@
-package istanbul.coderetreat;
+package istanbul.coderetreat.rules;
+
+import istanbul.coderetreat.cells.AliveCell;
+import istanbul.coderetreat.cells.Cell;
+import istanbul.coderetreat.cells.DeadCell;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * <p>
  * C   N                 new C
  * 1   0,1             ->  0  # Lonely
  * 1   4,5,6,7,8       ->  0  # Overcrowded
  * 1   2,3             ->  1  # Lives
  * 0   3               ->  1  # It takes three to give birth!
  * 0   0,1,2,4,5,6,7,8 ->  0  # Barren
- * <p>
+ * </p>
  * Created by dogan
  */
-public class Ruler {
-    private static final Map<Cell, Map<Integer, Cell>> ruleMap = new HashMap<>();
+public class CodeTreatRuleBook implements RuleBook {
+
+    private static final Map<Cell, Map<Integer, Cell>> RULES = new HashMap<>();
 
     static {
         Map<Integer, Cell> aliveRules = new HashMap<>();
@@ -37,15 +43,13 @@ public class Ruler {
         deadRules.put(6, DeadCell.INSTANCE);
         deadRules.put(7, DeadCell.INSTANCE);
         deadRules.put(8, DeadCell.INSTANCE);
-        ruleMap.put(AliveCell.INSTANCE, aliveRules);
-        ruleMap.put(DeadCell.INSTANCE, deadRules);
+        RULES.put(AliveCell.INSTANCE, aliveRules);
+        RULES.put(DeadCell.INSTANCE, deadRules);
     }
 
-    public static Cell evolve(Cell cell, Integer numOfNeighbours) {
-        return ruleMap.get(cell).get(numOfNeighbours);
-    }
-
-    private Ruler() {
+    @Override
+    public Cell lookup(Cell cell, Integer numOfNeighbours) {
+        return RULES.get(cell).get(numOfNeighbours);
     }
 
 }
