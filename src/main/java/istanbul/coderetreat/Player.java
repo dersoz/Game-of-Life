@@ -26,6 +26,12 @@ public class Player {
         return this;
     }
 
+    public Player nextGen(int numOfGenerations) {
+        for (int i = 0; i < numOfGenerations; i++)
+            board = evolve();
+        return this;
+    }
+
     private Board evolve() {
         Cell[][] state = board.state();
         int rows = state.length;

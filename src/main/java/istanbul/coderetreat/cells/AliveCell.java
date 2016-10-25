@@ -5,12 +5,6 @@ package istanbul.coderetreat.cells;
  */
 public class AliveCell implements Cell {
 
-    public static final Cell INSTANCE;
-
-    static {
-        INSTANCE = new AliveCell();
-    }
-
     @Override
     public Boolean isAlive() {
         return true;
@@ -21,6 +15,6 @@ public class AliveCell implements Cell {
         return "A";
     }
 
-    private AliveCell() {
+    AliveCell() {
     }
 }

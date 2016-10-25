@@ -11,12 +11,4 @@ public interface Cell {
         return isAlive() ? 1 : 0;
     }
 
-    static Cell alive() {
-        return AliveCell.INSTANCE;
-    }
-
-    static Cell dead() {
-        return DeadCell.INSTANCE;
-    }
-
 }

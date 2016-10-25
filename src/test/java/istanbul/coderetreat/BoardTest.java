@@ -1,10 +1,12 @@
 package istanbul.coderetreat;
 
 import istanbul.coderetreat.cells.Cell;
+import istanbul.coderetreat.cells.CellFactory;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertArrayEquals;
+import static istanbul.coderetreat.TestRepository.cells3x3Neighbours;
+import static istanbul.coderetreat.TestRepository.cells3x3Str;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -14,40 +16,41 @@ public class BoardTest {
 
     private Board board;
 
-    private Cell[][] cells = new Cell[][]{
-            {Cell.dead(), Cell.alive(), Cell.dead()},
-            {Cell.dead(), Cell.dead(), Cell.dead()},
-            {Cell.alive(), Cell.alive(), Cell.alive()}
-    };
-
-    private Integer[][] neighbourCounts = new Integer[][]{
-            {1, 0, 1},
-            {3, 4, 3},
-            {1, 2, 1}
-    };
-
     @Before
     public void init() {
-        board = new Board(cells);
+        board = new Board(cells3x3Str);
     }
 
     @Test
     public void shouldInitBoard() {
-        assertArrayEquals(cells, board.state());
+        assertEquals(cells3x3Str, board.toString());
+    }
+
+    @Test(expected = Exception.class)
+    public void givenNullPassedBoardShouldNotInit() {
+        Board b = new Board("x");
     }
 
     @Test
     public void shouldComputeNeighbours() {
-        Board board = new Board(cells);
-        assertEquals(neighbourCounts[0][0], board.getNumOfNeighbours(0, 0));
-        assertEquals(neighbourCounts[0][1], board.getNumOfNeighbours(0, 1));
-        assertEquals(neighbourCounts[0][2], board.getNumOfNeighbours(0, 2));
-        assertEquals(neighbourCounts[1][0], board.getNumOfNeighbours(1, 0));
-        assertEquals(neighbourCounts[1][1], board.getNumOfNeighbours(1, 1));
-        assertEquals(neighbourCounts[1][2], board.getNumOfNeighbours(1, 2));
-        assertEquals(neighbourCounts[2][0], board.getNumOfNeighbours(2, 0));
-        assertEquals(neighbourCounts[2][1], board.getNumOfNeighbours(2, 1));
-        assertEquals(neighbourCounts[2][2], board.getNumOfNeighbours(2, 2));
+        Board board = new Board(cells3x3Str);
+        assertEquals(cells3x3Neighbours[0][0], board.getNumOfNeighbours(0, 0));
+        assertEquals(cells3x3Neighbours[0][1], board.getNumOfNeighbours(0, 1));
+        assertEquals(cells3x3Neighbours[0][2], board.getNumOfNeighbours(0, 2));
+        assertEquals(cells3x3Neighbours[1][0], board.getNumOfNeighbours(1, 0));
+        assertEquals(cells3x3Neighbours[1][1], board.getNumOfNeighbours(1, 1));
+        assertEquals(cells3x3Neighbours[1][2], board.getNumOfNeighbours(1, 2));
+        assertEquals(cells3x3Neighbours[2][0], board.getNumOfNeighbours(2, 0));
+        assertEquals(cells3x3Neighbours[2][1], board.getNumOfNeighbours(2, 1));
+        assertEquals(cells3x3Neighbours[2][2], board.getNumOfNeighbours(2, 2));
+    }
+
+    @Test
+    public void shouldLoadFromString() {
+        String cellStr = "[D D A]\n[A D A]\n[D D A]";
+        Cell[][] cellsFromStr = CellFactory.cellsFromString(cellStr);
+        Board board = new Board(cellsFromStr);
+        assertEquals(cellStr, board.toString());
     }
 
 }

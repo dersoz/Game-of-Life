@@ -1,6 +1,11 @@
 package istanbul.coderetreat;
 
 import istanbul.coderetreat.cells.Cell;
+import istanbul.coderetreat.cells.CellFactory;
+
+import java.util.Arrays;
+
+import static java.util.stream.Collectors.joining;
 
 /**
  * Created by dogan
@@ -11,9 +16,21 @@ public class Board {
 
     private Cell[][] cells;
 
+    public Board(String cellsStr) {
+        initCells(CellFactory.cellsFromString(cellsStr));
+        this.rows = this.cells.length;
+        this.columns = this.cells[0].length;
+    }
+
     public Board(Cell[][] cells) {
-        this.rows = cells.length;
-        this.columns = cells[0].length;
+        initCells(cells);
+        this.rows = this.cells.length;
+        this.columns = this.cells[0].length;
+    }
+
+    private void initCells(Cell[][] cells) {
+        if (cells == null)
+            throw new InvalidCellsException("NULL passed to cells");
         this.cells = copyCells(cells);
     }
 
@@ -41,6 +58,16 @@ public class Board {
         }
         count -= cells[rowIndex][columnIndex].count(); // Subtract itself
         return count;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.stream(cells)
+                .map(row -> "[" + Arrays.stream(row)
+                        .map(Object::toString)
+                        .collect(joining(" ")) + "]"
+                )
+                .collect(joining("\n"));
     }
 
 }
