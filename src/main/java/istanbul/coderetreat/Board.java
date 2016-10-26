@@ -10,7 +10,7 @@ import static java.util.stream.Collectors.joining;
 /**
  * Created by dogan
  */
-public class Board {
+public class Board implements Cloneable {
     private Integer rows;
     private Integer columns;
 
@@ -28,13 +28,22 @@ public class Board {
         this.columns = this.cells[0].length;
     }
 
+    @Override
+    public Board clone() {
+        return new Board(cloneCells(this.cells));
+    }
+
+    public void setCells(Cell[][] cells) {
+        initCells(cells);
+    }
+
     private void initCells(Cell[][] cells) {
         if (cells == null)
             throw new InvalidCellsException("NULL passed to cells");
-        this.cells = copyCells(cells);
+        this.cells = cloneCells(cells);
     }
 
-    private static Cell[][] copyCells(Cell[][] cells) {
+    private static Cell[][] cloneCells(Cell[][] cells) {
         Cell[][] copiedCells = new Cell[cells.length][cells[0].length];
         for (int i = 0; i < cells.length; i++)
             System.arraycopy(cells[i], 0, copiedCells[i], 0, cells[0].length);
@@ -42,7 +51,7 @@ public class Board {
     }
 
     public Cell[][] state() {
-        return copyCells(this.cells);
+        return cloneCells(this.cells);
     }
 
     public Integer getNumOfNeighbours(Integer rowIndex, Integer columnIndex) {

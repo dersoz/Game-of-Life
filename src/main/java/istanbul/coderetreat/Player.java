@@ -17,22 +17,17 @@ public class Player {
         this.ruleBook = ruleBook;
     }
 
-    public Board board() {
-        return board;
-    }
-
-    public Player nextGen() {
-        board = evolve();
-        return this;
-    }
-
     public Player nextGen(int numOfGenerations) {
         for (int i = 0; i < numOfGenerations; i++)
-            board = evolve();
+            next();
         return this;
     }
 
-    private Board evolve() {
+    public Board last() {
+        return board.clone();
+    }
+
+    private Player next() {
         Cell[][] state = board.state();
         int rows = state.length;
         int columns = state[0].length;
@@ -48,7 +43,8 @@ public class Player {
             }
             System.out.println();
         }
-        return new Board(nextGen);
+        board.setCells(nextGen);
+        return this;
     }
 
 }

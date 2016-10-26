@@ -27,12 +27,12 @@ public class PlayerTest {
         board = new Board(cells3x3Str);
         player = new Player(board, ruleBook);
 
-        assertEquals(cells3x3Gen1Str, player.nextGen().board().toString());
-        assertEquals(cells3x3Gen2Str, player.nextGen().board().toString());
+        assertEquals(cells3x3Gen1Str, player.nextGen(1).last().toString());
+        assertEquals(cells3x3Gen2Str, player.nextGen(1).last().toString());
         // ALL dead
-        assertEquals(cells3x3Gen3Str, player.nextGen().board().toString());
+        assertEquals(cells3x3Gen3Str, player.nextGen(1).last().toString());
         // Dead will stay dead
-        assertEquals(cells3x3Gen3Str, player.nextGen().board().toString());
+        assertEquals(cells3x3Gen3Str, player.nextGen(1).last().toString());
     }
 
     @Test
@@ -40,7 +40,7 @@ public class PlayerTest {
         board = new Board(cells3x3Str);
         player = new Player(board, ruleBook);
 
-        assertEquals(cells3x3Gen3Str, player.nextGen(3).board().toString());
+        assertEquals(cells3x3Gen3Str, player.nextGen(3).last().toString());
     }
 
     @Test
@@ -48,7 +48,7 @@ public class PlayerTest {
         board = new Board(cells5x4Str);
         player = new Player(board, ruleBook);
 
-        assertEquals(cells5x4Gen1Str, player.nextGen().board().toString());
+        assertEquals(cells5x4Gen1Str, player.nextGen(1).last().toString());
     }
 
 }
