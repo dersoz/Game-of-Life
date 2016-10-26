@@ -20,12 +20,13 @@ public class PlayerTest {
     @Before
     public void init() {
         ruleBook = new GOLRuleBook();
-        board = new Board(cells3x3Str);
-        player = new Player(board, ruleBook);
     }
 
     @Test
     public void shouldEvolveNextGen() {
+        board = new Board(cells3x3Str);
+        player = new Player(board, ruleBook);
+
         assertEquals(cells3x3Gen1Str, player.nextGen().board().toString());
         assertEquals(cells3x3Gen2Str, player.nextGen().board().toString());
         // ALL dead
@@ -36,7 +37,18 @@ public class PlayerTest {
 
     @Test
     public void shoulEvolveMultipleGenerations() {
+        board = new Board(cells3x3Str);
+        player = new Player(board, ruleBook);
+
         assertEquals(cells3x3Gen3Str, player.nextGen(3).board().toString());
+    }
+
+    @Test
+    public void shouldEvolve5x4() {
+        board = new Board(cells5x4Str);
+        player = new Player(board, ruleBook);
+
+        assertEquals(cells5x4Gen1Str, player.nextGen().board().toString());
     }
 
 }
