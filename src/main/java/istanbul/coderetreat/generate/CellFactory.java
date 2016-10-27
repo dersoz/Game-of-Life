@@ -1,4 +1,8 @@
-package istanbul.coderetreat.cells;
+package istanbul.coderetreat.generate;
+
+import istanbul.coderetreat.domain.AliveCell;
+import istanbul.coderetreat.domain.Cell;
+import istanbul.coderetreat.domain.DeadCell;
 
 /**
  * Created by dogan

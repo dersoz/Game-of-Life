@@ -1,7 +1,9 @@
 package istanbul.coderetreat;
 
-import istanbul.coderetreat.populate.RandomPopulator;
-import istanbul.coderetreat.populate.StrLoadingPopulator;
+import istanbul.coderetreat.domain.Board;
+import istanbul.coderetreat.domain.Player;
+import istanbul.coderetreat.generate.RandomPopulator;
+import istanbul.coderetreat.generate.StrLoadingPopulator;
 import istanbul.coderetreat.rules.GOLRuleBook;
 import istanbul.coderetreat.rules.RuleBook;
 import org.junit.Before;
@@ -60,6 +62,7 @@ public class PlayerTest {
         Board gameWorld = new Board(new RandomPopulator(rows, columns));
         Player gamer = new Player(gameWorld, new GOLRuleBook());
         assertEquals(gameWorld, gamer.last());
+        System.out.print(gamer.last());
     }
 
 }

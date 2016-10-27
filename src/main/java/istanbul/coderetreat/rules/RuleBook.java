@@ -1,6 +1,6 @@
 package istanbul.coderetreat.rules;
 
-import istanbul.coderetreat.cells.Cell;
+import istanbul.coderetreat.domain.Cell;
 
 /**
  * Created by dogan

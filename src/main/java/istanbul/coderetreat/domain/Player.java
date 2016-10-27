@@ -1,6 +1,5 @@
-package istanbul.coderetreat;
+package istanbul.coderetreat.domain;
 
-import istanbul.coderetreat.cells.Cell;
 import istanbul.coderetreat.rules.RuleBook;
 
 /**
@@ -32,16 +31,13 @@ public class Player {
         int rows = state.length;
         int columns = state[0].length;
         Cell[][] nextGen = new Cell[rows][columns];
-        System.out.println("rows: " + rows + ", columns: " + columns);
         for (int i = 0; i < columns; i++) {
             for (int j = 0; j < rows; j++) {
                 Integer neighbourCount = board.getNumOfNeighbours(j, i);
                 Cell currentCell = state[j][i];
                 Cell nextCell = ruleBook.lookup(currentCell, neighbourCount);
-                System.out.print("{" + currentCell + "-" + neighbourCount + "-" + nextCell + "} ");
                 nextGen[j][i] = nextCell;
             }
-            System.out.println();
         }
         board.setCells(nextGen);
         return this;

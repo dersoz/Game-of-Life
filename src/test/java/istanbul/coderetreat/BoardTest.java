@@ -1,8 +1,9 @@
 package istanbul.coderetreat;
 
-import istanbul.coderetreat.cells.Cell;
-import istanbul.coderetreat.populate.RandomPopulator;
-import istanbul.coderetreat.populate.StrLoadingPopulator;
+import istanbul.coderetreat.domain.Board;
+import istanbul.coderetreat.domain.Cell;
+import istanbul.coderetreat.generate.RandomPopulator;
+import istanbul.coderetreat.generate.StrLoadingPopulator;
 import org.junit.Before;
 import org.junit.Test;
 

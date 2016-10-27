@@ -1,7 +1,7 @@
-package istanbul.coderetreat;
+package istanbul.coderetreat.domain;
 
-import istanbul.coderetreat.cells.Cell;
-import istanbul.coderetreat.populate.Populator;
+import istanbul.coderetreat.domain.exception.InvalidCellsException;
+import istanbul.coderetreat.generate.Populator;
 
 import java.util.Arrays;
 
@@ -60,11 +60,15 @@ public class Board implements Cloneable {
             for (Integer j = rowIndex - 1; j <= rowIndex + 1; j++) {
                 if (j < 0 || j.equals(rows))  // Skip beyond boundary
                     continue;
-                count += cells[j][i].count();
+                count += decideToCount(cells[j][i]);
             }
         }
-        count -= cells[rowIndex][columnIndex].count(); // Subtract itself
+        count -= decideToCount(cells[rowIndex][columnIndex]); // Subtract itself
         return count;
+    }
+
+    private Integer decideToCount(Cell cell) {
+        return cell.isAlive() ? 1 : 0;
     }
 
     @Override

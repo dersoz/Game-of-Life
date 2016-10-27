@@ -1,4 +1,4 @@
-package istanbul.coderetreat;
+package istanbul.coderetreat.domain.exception;
 
 /**
  * Created by dogan

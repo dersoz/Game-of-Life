@@ -1,7 +1,7 @@
 package istanbul.coderetreat.rules;
 
-import istanbul.coderetreat.cells.Cell;
-import istanbul.coderetreat.cells.CellFactory;
+import istanbul.coderetreat.domain.Cell;
+import istanbul.coderetreat.generate.CellFactory;
 import org.junit.Before;
 import org.junit.Test;
 

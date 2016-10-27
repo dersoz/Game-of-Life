@@ -1,5 +1,5 @@
 #Conway's Game of Life
-An object oriented approach to famous Game of Life.
+An object oriented - and a bit complicated :)- approach to famous Game of Life.
 
 On 2016.10.22 I attended a Code Retreat in Istanbul. After the event I decided to take an object oriented approach to the solution of problem.
 
@@ -15,10 +15,10 @@ The classes and responsibilities
 - Populator - Cell generators
   - StrLoadingPopulator - Load initial cells from new line delimited string such as ```[A D A]\n[D D D]```
   - RandomPopulator - Given number of rows and number of columns randomly generate cells
+- Main - Main class. Number of rows, number of columns and number of generations are collected from user
 
 # Idioms
 - The cells are placed in the board in a matrix like 2d array. 
 - Flyweight pattern is applied to the representation of individual cells.
 - Cells are represented in string as 'A' and 'D'
-- Initial state of a board can be given as 
-  - ```[A D D A]\n[D D A A]\n[A D D D]```
+- Cell generation is implemented as Strategy Pattern with the use of 'Populator' interface

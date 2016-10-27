@@ -1,7 +1,6 @@
-package istanbul.coderetreat.populate;
+package istanbul.coderetreat.generate;
 
-import istanbul.coderetreat.cells.Cell;
-import istanbul.coderetreat.cells.CellFactory;
+import istanbul.coderetreat.domain.Cell;
 
 import java.security.SecureRandom;
 

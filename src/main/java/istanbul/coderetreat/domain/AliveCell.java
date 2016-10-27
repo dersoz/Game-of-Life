@@ -1,4 +1,4 @@
-package istanbul.coderetreat.cells;
+package istanbul.coderetreat.domain;
 
 /**
  * Created by dogan
@@ -15,6 +15,6 @@ public class AliveCell implements Cell {
         return "A";
     }
 
-    AliveCell() {
+    public AliveCell() {
     }
 }

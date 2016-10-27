@@ -1,4 +1,4 @@
-package istanbul.coderetreat.cells;
+package istanbul.coderetreat.domain;
 
 /**
  * Created by dogan
@@ -15,7 +15,7 @@ public class DeadCell implements Cell {
         return "D";
     }
 
-    DeadCell() {
+    public DeadCell() {
     }
 
 }
