@@ -1,7 +1,6 @@
 package istanbul.coderetreat;
 
-import istanbul.coderetreat.cells.Cell;
-import istanbul.coderetreat.cells.CellFactory;
+import istanbul.coderetreat.populate.StrLoadingPopulator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,7 +17,7 @@ public class BoardTest {
 
     @Before
     public void init() {
-        board = new Board(cells3x3Str);
+        board = new Board(new StrLoadingPopulator(cells3x3Str));
     }
 
     @Test
@@ -28,12 +27,12 @@ public class BoardTest {
 
     @Test(expected = Exception.class)
     public void givenNullPassedBoardShouldNotInit() {
-        Board b = new Board("x");
+        Board b = new Board(null);
     }
 
     @Test
     public void shouldComputeNeighbours() {
-        Board board = new Board(cells3x3Str);
+        Board board = new Board(new StrLoadingPopulator(cells3x3Str));
         assertEquals(cells3x3Neighbours[0][0], board.getNumOfNeighbours(0, 0));
         assertEquals(cells3x3Neighbours[0][1], board.getNumOfNeighbours(0, 1));
         assertEquals(cells3x3Neighbours[0][2], board.getNumOfNeighbours(0, 2));
@@ -48,8 +47,7 @@ public class BoardTest {
     @Test
     public void shouldLoadFromString() {
         String cellStr = "[D D A]\n[A D A]\n[D D A]";
-        Cell[][] cellsFromStr = CellFactory.cellsFromString(cellStr);
-        Board board = new Board(cellsFromStr);
+        Board board = new Board(new StrLoadingPopulator(cellStr));
         assertEquals(cellStr, board.toString());
     }
 

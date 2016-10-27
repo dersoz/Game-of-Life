@@ -1,4 +1,6 @@
-package istanbul.coderetreat.cells;
+package istanbul.coderetreat.populate;
+
+import istanbul.coderetreat.cells.Cell;
 
 /**
  * Created by dogan

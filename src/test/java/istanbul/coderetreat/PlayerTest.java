@@ -1,5 +1,6 @@
 package istanbul.coderetreat;
 
+import istanbul.coderetreat.populate.StrLoadingPopulator;
 import istanbul.coderetreat.rules.GOLRuleBook;
 import istanbul.coderetreat.rules.RuleBook;
 import org.junit.Before;
@@ -24,7 +25,7 @@ public class PlayerTest {
 
     @Test
     public void shouldEvolveNextGen() {
-        board = new Board(cells3x3Str);
+        board = new Board(new StrLoadingPopulator(cells3x3Str));
         player = new Player(board, ruleBook);
 
         assertEquals(cells3x3Gen1Str, player.nextGen(1).last().toString());
@@ -37,7 +38,7 @@ public class PlayerTest {
 
     @Test
     public void shoulEvolveMultipleGenerations() {
-        board = new Board(cells3x3Str);
+        board = new Board(new StrLoadingPopulator(cells3x3Str));
         player = new Player(board, ruleBook);
 
         assertEquals(cells3x3Gen3Str, player.nextGen(3).last().toString());
@@ -45,7 +46,7 @@ public class PlayerTest {
 
     @Test
     public void shouldEvolve5x4() {
-        board = new Board(cells5x4Str);
+        board = new Board(new StrLoadingPopulator(cells5x4Str));
         player = new Player(board, ruleBook);
 
         assertEquals(cells5x4Gen1Str, player.nextGen(1).last().toString());

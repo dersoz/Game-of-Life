@@ -1,7 +1,7 @@
 package istanbul.coderetreat;
 
 import istanbul.coderetreat.cells.Cell;
-import istanbul.coderetreat.cells.CellFactory;
+import istanbul.coderetreat.populate.Populator;
 
 import java.util.Arrays;
 
@@ -16,13 +16,11 @@ public class Board implements Cloneable {
 
     private Cell[][] cells;
 
-    public Board(String cellsStr) {
-        initCells(CellFactory.cellsFromString(cellsStr));
-        this.rows = this.cells.length;
-        this.columns = this.cells[0].length;
+    public Board(Populator populator) {
+        this(populator.populate());
     }
 
-    public Board(Cell[][] cells) {
+    private Board(Cell[][] cells) {
         initCells(cells);
         this.rows = this.cells.length;
         this.columns = this.cells[0].length;

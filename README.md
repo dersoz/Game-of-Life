@@ -12,6 +12,8 @@ The classes and responsibilities
 - Board - The game world. Holds all the cells, and their locations. Can tell each cells number of neighbours.
 - Player - The player of the game. Player is just responsible for generation change of the board.
 - CellFactory - Responsible for cell creation (Gives the same instance for all the alive cells, and gives the same instance for all the dead cells)
+- Populator - Cell generators
+  - StrLoadingPopulator - Load initial cells from new line delimited string such as ```[A D A]\n[D D D]```  
 
 # Idioms
 - The cells are placed in the board in a matrix like 2d array. 
