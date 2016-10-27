@@ -77,5 +77,26 @@ public class Board implements Cloneable {
                 .collect(joining("\n"));
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Board board = (Board) o;
+
+        if (!rows.equals(board.rows)) return false;
+        if (!columns.equals(board.columns)) return false;
+        return Arrays.deepEquals(cells, board.cells);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = rows.hashCode();
+        result = 31 * result + columns.hashCode();
+        result = 31 * result + Arrays.deepHashCode(cells);
+        return result;
+    }
+
 }
 

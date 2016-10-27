@@ -1,5 +1,7 @@
 package istanbul.coderetreat;
 
+import istanbul.coderetreat.cells.Cell;
+import istanbul.coderetreat.populate.RandomPopulator;
 import istanbul.coderetreat.populate.StrLoadingPopulator;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,6 +9,7 @@ import org.junit.Test;
 import static istanbul.coderetreat.TestRepository.cells3x3Neighbours;
 import static istanbul.coderetreat.TestRepository.cells3x3Str;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by dogan
@@ -49,6 +52,17 @@ public class BoardTest {
         String cellStr = "[D D A]\n[A D A]\n[D D A]";
         Board board = new Board(new StrLoadingPopulator(cellStr));
         assertEquals(cellStr, board.toString());
+    }
+
+    @Test
+    public void shouldGenerateRandomCells() {
+        int rows = 10;
+        int columns = 15;
+        Board board = new Board(new RandomPopulator(rows, columns));
+        Cell[][] state = board.state();
+        assertNotNull(state);
+        assertEquals(rows, state.length);
+        assertEquals(columns, state[0].length);
     }
 
 }

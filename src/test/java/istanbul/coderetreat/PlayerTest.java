@@ -1,5 +1,6 @@
 package istanbul.coderetreat;
 
+import istanbul.coderetreat.populate.RandomPopulator;
 import istanbul.coderetreat.populate.StrLoadingPopulator;
 import istanbul.coderetreat.rules.GOLRuleBook;
 import istanbul.coderetreat.rules.RuleBook;
@@ -50,6 +51,15 @@ public class PlayerTest {
         player = new Player(board, ruleBook);
 
         assertEquals(cells5x4Gen1Str, player.nextGen(1).last().toString());
+    }
+
+    @Test
+    public void shouldPlayRandomly() {
+        int rows = 10;
+        int columns = 20;
+        Board gameWorld = new Board(new RandomPopulator(rows, columns));
+        Player gamer = new Player(gameWorld, new GOLRuleBook());
+        assertEquals(gameWorld, gamer.last());
     }
 
 }
