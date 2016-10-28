@@ -1,6 +1,6 @@
-package istanbul.coderetreat.domain;
+package dersoz.coderetreat.istanbul.gol.domain;
 
-import istanbul.coderetreat.rules.RuleBook;
+import dersoz.coderetreat.istanbul.gol.rules.RuleBook;
 
 /**
  * Player who is responsible to make the moves

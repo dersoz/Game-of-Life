@@ -1,9 +1,9 @@
-package istanbul.coderetreat;
+package dersoz.coderetreat.istanbul.gol;
 
-import istanbul.coderetreat.domain.Board;
-import istanbul.coderetreat.domain.Player;
-import istanbul.coderetreat.generate.RandomPopulator;
-import istanbul.coderetreat.rules.GOLRuleBook;
+import dersoz.coderetreat.istanbul.gol.domain.Board;
+import dersoz.coderetreat.istanbul.gol.domain.Player;
+import dersoz.coderetreat.istanbul.gol.generate.RandomPopulator;
+import dersoz.coderetreat.istanbul.gol.rules.GOLRuleBook;
 
 import java.util.Scanner;
 

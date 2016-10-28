@@ -1,8 +1,8 @@
-package istanbul.coderetreat.generate;
+package dersoz.coderetreat.istanbul.gol.generate;
 
-import istanbul.coderetreat.domain.AliveCell;
-import istanbul.coderetreat.domain.Cell;
-import istanbul.coderetreat.domain.DeadCell;
+import dersoz.coderetreat.istanbul.gol.domain.AliveCell;
+import dersoz.coderetreat.istanbul.gol.domain.Cell;
+import dersoz.coderetreat.istanbul.gol.domain.DeadCell;
 
 /**
  * Created by dogan

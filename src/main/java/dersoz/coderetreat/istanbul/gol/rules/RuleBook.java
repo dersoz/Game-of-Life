@@ -1,6 +1,6 @@
-package istanbul.coderetreat.rules;
+package dersoz.coderetreat.istanbul.gol.rules;
 
-import istanbul.coderetreat.domain.Cell;
+import dersoz.coderetreat.istanbul.gol.domain.Cell;
 
 /**
  * Created by dogan

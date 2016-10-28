@@ -1,4 +1,4 @@
-package istanbul.coderetreat;
+package dersoz.coderetreat.istanbul.gol.domain;
 
 /**
  * Created by dogan

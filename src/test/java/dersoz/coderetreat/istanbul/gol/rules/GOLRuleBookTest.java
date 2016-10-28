@@ -1,7 +1,7 @@
-package istanbul.coderetreat.rules;
+package dersoz.coderetreat.istanbul.gol.rules;
 
-import istanbul.coderetreat.domain.Cell;
-import istanbul.coderetreat.generate.CellFactory;
+import dersoz.coderetreat.istanbul.gol.domain.Cell;
+import dersoz.coderetreat.istanbul.gol.generate.CellFactory;
 import org.junit.Before;
 import org.junit.Test;
 

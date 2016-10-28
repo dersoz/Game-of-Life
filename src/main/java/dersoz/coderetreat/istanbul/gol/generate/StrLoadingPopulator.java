@@ -1,6 +1,6 @@
-package istanbul.coderetreat.generate;
+package dersoz.coderetreat.istanbul.gol.generate;
 
-import istanbul.coderetreat.domain.Cell;
+import dersoz.coderetreat.istanbul.gol.domain.Cell;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

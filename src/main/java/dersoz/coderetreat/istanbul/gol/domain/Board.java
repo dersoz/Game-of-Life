@@ -1,7 +1,7 @@
-package istanbul.coderetreat.domain;
+package dersoz.coderetreat.istanbul.gol.domain;
 
-import istanbul.coderetreat.domain.exception.InvalidCellsException;
-import istanbul.coderetreat.generate.Populator;
+import dersoz.coderetreat.istanbul.gol.domain.exception.InvalidCellsException;
+import dersoz.coderetreat.istanbul.gol.generate.Populator;
 
 import java.util.Arrays;
 

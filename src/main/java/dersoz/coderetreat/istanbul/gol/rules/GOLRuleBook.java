@@ -1,12 +1,12 @@
-package istanbul.coderetreat.rules;
+package dersoz.coderetreat.istanbul.gol.rules;
 
-import istanbul.coderetreat.domain.Cell;
+import dersoz.coderetreat.istanbul.gol.domain.Cell;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static istanbul.coderetreat.generate.CellFactory.alive;
-import static istanbul.coderetreat.generate.CellFactory.dead;
+import static dersoz.coderetreat.istanbul.gol.generate.CellFactory.alive;
+import static dersoz.coderetreat.istanbul.gol.generate.CellFactory.dead;
 
 /**
  * <p>
