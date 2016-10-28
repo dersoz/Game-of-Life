@@ -1,7 +1,7 @@
 package dersoz.coderetreat.istanbul.gol.domain;
 
-import dersoz.coderetreat.istanbul.gol.generate.StrLoadingPopulator;
 import dersoz.coderetreat.istanbul.gol.generate.RandomPopulator;
+import dersoz.coderetreat.istanbul.gol.generate.StrLoadingPopulator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,9 +9,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-/**
- * Created by dogan
- */
 public class BoardTest {
 
     private Board board;

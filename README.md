@@ -1,7 +1,7 @@
 #Conway's Game of Life
 An object oriented - and a bit complicated :)- approach to famous Game of Life.
 
-On 2016.10.22 I attended a Code Retreat in Istanbul. After the event I decided to take an object oriented approach to the solution of problem.
+After attending a Code Retreat in Istanbul, I decided to take an object oriented approach to the solution of problem.
 
 The classes and responsibilities
 - RuleBook - Main interface for game rules

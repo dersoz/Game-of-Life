@@ -10,9 +10,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by dogan
- */
 public class PlayerTest {
 
     private Player player;

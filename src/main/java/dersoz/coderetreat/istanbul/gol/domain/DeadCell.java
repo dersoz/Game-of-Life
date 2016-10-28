@@ -1,9 +1,9 @@
 package dersoz.coderetreat.istanbul.gol.domain;
 
-/**
- * Created by dogan
- */
 public class DeadCell implements Cell {
+
+    public DeadCell() {
+    }
 
     @Override
     public Boolean isAlive() {
@@ -13,9 +13,6 @@ public class DeadCell implements Cell {
     @Override
     public String toString() {
         return "D";
-    }
-
-    public DeadCell() {
     }
 
 }

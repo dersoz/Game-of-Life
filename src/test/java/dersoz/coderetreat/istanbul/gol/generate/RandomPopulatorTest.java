@@ -9,9 +9,6 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-/**
- * Created by dogan
- */
 public class RandomPopulatorTest {
 
     @Test

@@ -2,11 +2,8 @@ package dersoz.coderetreat.istanbul.gol.generate;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-/**
- * Created by dogan
- */
 public class CellFactoryTest {
     @Test
     public void cellFromString() throws Exception {

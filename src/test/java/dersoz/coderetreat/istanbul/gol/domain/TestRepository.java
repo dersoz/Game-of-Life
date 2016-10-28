@@ -1,8 +1,5 @@
 package dersoz.coderetreat.istanbul.gol.domain;
 
-/**
- * Created by dogan
- */
 final class TestRepository {
 
     static final String cells3x3Str = "[D A D]\n[D D D]\n[A A A]";

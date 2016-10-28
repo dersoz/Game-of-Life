@@ -7,9 +7,6 @@ import java.util.Arrays;
 
 import static java.util.stream.Collectors.joining;
 
-/**
- * Created by dogan
- */
 public class Board implements Cloneable {
     private Integer rows;
     private Integer columns;
@@ -26,6 +23,13 @@ public class Board implements Cloneable {
         this.columns = this.cells[0].length;
     }
 
+    private static Cell[][] cloneCells(Cell[][] cells) {
+        Cell[][] copiedCells = new Cell[cells.length][cells[0].length];
+        for (int i = 0; i < cells.length; i++)
+            System.arraycopy(cells[i], 0, copiedCells[i], 0, cells[0].length);
+        return copiedCells;
+    }
+
     @Override
     public Board clone() {
         return new Board(cloneCells(this.cells));
@@ -39,13 +43,6 @@ public class Board implements Cloneable {
         if (cells == null)
             throw new InvalidCellsException("NULL passed to cells");
         this.cells = cloneCells(cells);
-    }
-
-    private static Cell[][] cloneCells(Cell[][] cells) {
-        Cell[][] copiedCells = new Cell[cells.length][cells[0].length];
-        for (int i = 0; i < cells.length; i++)
-            System.arraycopy(cells[i], 0, copiedCells[i], 0, cells[0].length);
-        return copiedCells;
     }
 
     public Cell[][] state() {

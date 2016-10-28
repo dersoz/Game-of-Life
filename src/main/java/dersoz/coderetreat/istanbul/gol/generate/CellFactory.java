@@ -4,9 +4,6 @@ import dersoz.coderetreat.istanbul.gol.domain.AliveCell;
 import dersoz.coderetreat.istanbul.gol.domain.Cell;
 import dersoz.coderetreat.istanbul.gol.domain.DeadCell;
 
-/**
- * Created by dogan
- */
 public final class CellFactory {
 
     private static final Cell ALIVE;
@@ -15,6 +12,9 @@ public final class CellFactory {
     static {
         ALIVE = new AliveCell();
         DEAD = new DeadCell();
+    }
+
+    private CellFactory() {
     }
 
     public static Cell alive() {
@@ -27,8 +27,5 @@ public final class CellFactory {
 
     public static Cell cellFromString(final String strRep) {
         return "A".equals(strRep.trim()) ? alive() : dead();
-    }
-
-    private CellFactory() {
     }
 }

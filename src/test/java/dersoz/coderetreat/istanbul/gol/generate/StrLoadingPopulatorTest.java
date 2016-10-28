@@ -7,9 +7,6 @@ import static dersoz.coderetreat.istanbul.gol.generate.CellFactory.alive;
 import static dersoz.coderetreat.istanbul.gol.generate.CellFactory.dead;
 import static org.junit.Assert.assertArrayEquals;
 
-/**
- * Created by dogan
- */
 public class StrLoadingPopulatorTest {
 
     final String cells3x3Str = "[D A D]\n[D D D]\n[A A A]";

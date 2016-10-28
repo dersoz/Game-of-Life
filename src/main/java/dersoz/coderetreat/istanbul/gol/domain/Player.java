@@ -4,7 +4,6 @@ import dersoz.coderetreat.istanbul.gol.rules.RuleBook;
 
 /**
  * Player who is responsible to make the moves
- * Created by dogan
  */
 public class Player {
 

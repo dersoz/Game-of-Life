@@ -5,9 +5,6 @@ import dersoz.coderetreat.istanbul.gol.domain.Cell;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-/**
- * Created by dogan
- */
 public class StrLoadingPopulator implements Populator {
 
     private final String strRep;

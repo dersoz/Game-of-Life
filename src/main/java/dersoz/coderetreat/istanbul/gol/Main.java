@@ -7,9 +7,6 @@ import dersoz.coderetreat.istanbul.gol.rules.GOLRuleBook;
 
 import java.util.Scanner;
 
-/**
- * Created by dogan
- */
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

@@ -1,8 +1,5 @@
 package dersoz.coderetreat.istanbul.gol.domain.exception;
 
-/**
- * Created by dogan
- */
 public class InvalidCellsException extends RuntimeException {
     public InvalidCellsException(String message) {
         super(message);

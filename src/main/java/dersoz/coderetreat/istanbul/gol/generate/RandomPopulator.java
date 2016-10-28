@@ -4,9 +4,6 @@ import dersoz.coderetreat.istanbul.gol.domain.Cell;
 
 import java.security.SecureRandom;
 
-/**
- * Created by dogan
- */
 public class RandomPopulator implements Populator {
     private final int rows;
     private final int columns;
